@@ -1,0 +1,54 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="js/vendor/flowplayer/skin/playful.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+
+        <div id="container">
+            <p>Choose Your Own Adventure Demo</p>
+            <div class="flowplayer is-splash"
+                data-ratio="0.5625"
+                data-embed="false"
+                data-current="0">
+                <video>
+                    <source type="video/mp4" src="/videos/00.mp4">
+                </video>
+
+                <div class="fp-playlist">
+                    <a data-index="0" href="/videos/00.mp4">Chapter 0</a>
+                    <a data-index="1" href="/videos/01.mp4">Chapter 1</a>
+                    <a data-index="2" href="/videos/02.mp4">Chapter 2</a>
+                    <a data-index="3" href="/videos/03.mp4">Chapter 3</a>
+                    <a data-index="4" href="/videos/04.mp4">Chapter 4</a>
+                    <p></p> <!-- show info about advert -->
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+        <script src="js/vendor/flowplayer/flowplayer.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
