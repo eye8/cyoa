@@ -6,6 +6,81 @@
  * Kroc Camen, and the H5BP dev community and team.
  */
 
+
+
+/* ==========================================================================
+   Adventures
+   0: Start Screen => [1]
+   1: Choose Your Path Wisely => [2]
+   2: Your journey in search => [3]
+   3: As the ship rocks => [6,4]
+   4: You can feel the => [6]
+   5: Inside the room => [9]
+   6: Walk the plank => [5,9]
+   7: You can smell => [5]
+   8: The scattered loot => [7]
+   9: The island! A => [10]
+   10: After rowing across => [11,15]
+   11: Yikes, that was close => [10,12]
+   12: As you walk => [13]
+   13: You've navigated => [10,14]
+   14: Your heart is pounding => [10]
+   15: The sound of birds => [17,16]
+   16: More pirates => [17]
+   17: This jungle seems => [19,18]
+   18: There's the cave => [20,21]
+   19: You feel lost => [21,20]
+   20: A key! => [19,18]
+   21: Alas, once again => [22]
+   22: I've found it => [19,23]
+   23: Congratulations => [24]
+   24: Click to see => [25]
+   25: Do you have an idea => [Email,26]
+   26: The End
+   ========================================================================== */
+
+
+/* Begin The Adventure */
+.flowplayer[data-current="0"] .fp-playlist > a[data-to="1"],
+.flowplayer[data-current="1"] .fp-playlist > a[data-from="1"][data-to="2"],
+.flowplayer[data-current="2"] .fp-playlist > a[data-from="2"][data-to="3"],
+.flowplayer[data-current="3"] .fp-playlist > a[data-from="3"][data-to="6"],
+.flowplayer[data-current="3"] .fp-playlist > a[data-from="3"][data-to="4"],
+.flowplayer[data-current="4"] .fp-playlist > a[data-from="4"][data-to="6"],
+.flowplayer[data-current="5"] .fp-playlist > a[data-from="5"][data-to="9"],
+.flowplayer[data-current="6"] .fp-playlist > a[data-from="6"][data-to="5"],
+.flowplayer[data-current="6"] .fp-playlist > a[data-from="6"][data-to="9"],
+.flowplayer[data-current="7"] .fp-playlist > a[data-from="7"][data-to="5"],
+.flowplayer[data-current="8"] .fp-playlist > a[data-from="8"][data-to="7"],
+.flowplayer[data-current="9"] .fp-playlist > a[data-from="9"][data-to="10"],
+.flowplayer[data-current="10"] .fp-playlist > a[data-from="10"][data-to="11"],
+.flowplayer[data-current="10"] .fp-playlist > a[data-from="10"][data-to="15"],
+.flowplayer[data-current="11"] .fp-playlist > a[data-from="11"][data-to="10"],
+.flowplayer[data-current="11"] .fp-playlist > a[data-from="11"][data-to="12"],
+.flowplayer[data-current="12"] .fp-playlist > a[data-from="12"][data-to="13"],
+.flowplayer[data-current="13"] .fp-playlist > a[data-from="13"][data-to="10"],
+.flowplayer[data-current="13"] .fp-playlist > a[data-from="13"][data-to="14"],
+.flowplayer[data-current="14"] .fp-playlist > a[data-from="14"][data-to="10"],
+.flowplayer[data-current="15"] .fp-playlist > a[data-from="15"][data-to="17"],
+.flowplayer[data-current="15"] .fp-playlist > a[data-from="15"][data-to="16"],
+.flowplayer[data-current="16"] .fp-playlist > a[data-from="16"][data-to="17"],
+.flowplayer[data-current="17"] .fp-playlist > a[data-from="17"][data-to="19"],
+.flowplayer[data-current="17"] .fp-playlist > a[data-from="17"][data-to="18"],
+.flowplayer[data-current="18"] .fp-playlist > a[data-from="18"][data-to="20"],
+.flowplayer[data-current="18"] .fp-playlist > a[data-from="18"][data-to="21"],
+.flowplayer[data-current="19"] .fp-playlist > a[data-from="19"][data-to="21"],
+.flowplayer[data-current="19"] .fp-playlist > a[data-from="19"][data-to="20"],
+.flowplayer[data-current="20"] .fp-playlist > a[data-from="20"][data-to="19"],
+.flowplayer[data-current="20"] .fp-playlist > a[data-from="20"][data-to="18"],
+.flowplayer[data-current="21"] .fp-playlist > a[data-from="21"][data-to="22"],
+.flowplayer[data-current="22"] .fp-playlist > a[data-from="22"][data-to="19"],
+.flowplayer[data-current="22"] .fp-playlist > a[data-from="22"][data-to="23"],
+.flowplayer[data-current="23"] .fp-playlist > a[data-from="23"][data-to="24"],
+.flowplayer[data-current="24"] .fp-playlist > a[data-from="24"][data-to="25"],
+.flowplayer[data-current="25"] .fp-playlist > a[data-from="25"][data-to="26"] {
+    display: inline-block;
+}
+
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
@@ -102,7 +177,8 @@ textarea {
 
 
 .flowplayer {
-    background-color: #ccc;
+    background-color: #000;
+    background-image: url("/videos/demo1/splash.png");
 }
 .flowplayer .fp-playlist {
     display: none;
@@ -112,10 +188,10 @@ textarea {
     top: 50%;
     left: 50%;
     width: 350px;
-    height: 110px;
-    margin-top: -75px;
+    height: auto;
+    margin-top: -88px;
     margin-left: -175px;
-    background-color: #000;
+    background-color: #B5B9A5;
     opacity: .8;
     padding: 20px;
     text-align: center;
@@ -127,40 +203,24 @@ textarea {
 
 .flowplayer .fp-playlist > a {
     padding: 10px;
-    background-color: #00a6bc;
+    margin: 10px auto;
     color: #fff;
     display: none;
     text-align: center;
     margin: auto;
+    width: 90%;
+    font-size: 0.8em;
+
+    background-color: #434633;
+    text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+    color: #E8CD7A;
 }
 
 .flowplayer .fp-playlist p {
-    color: #fff;
+    color: #100D08;
     margin-top: 20px;
     text-align: center;
 }
-
-.flowplayer[data-current="0"] .fp-playlist > a[data-index="1"], .flowplayer[data-current="0"] .fp-playlist > a[data-index="2"] {
-    display: inline-block;
-}
-
-.flowplayer[data-current="1"] .fp-playlist > a[data-index="2"], .flowplayer[data-current="1"] .fp-playlist > a[data-index="3"] {
-    display: inline-block;
-}
-
-.flowplayer[data-current="2"] .fp-playlist > a[data-index="3"], .flowplayer[data-current="2"] .fp-playlist > a[data-index="4"] {
-    display: inline-block;
-}
-
-.flowplayer[data-current="3"] .fp-playlist > a[data-index="4"], .flowplayer[data-current="3"] .fp-playlist > a[data-index="0"] {
-    display: inline-block;
-}
-
-
-
-
-
-
 
 /* ==========================================================================
    Helper classes
