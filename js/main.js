@@ -15,7 +15,7 @@ flowplayer(function(api, root) {
         };
 
         var gameover = function() {
-            api.play("/videos/demo1/game_over.mp4");
+            api.play("https://dl.dropboxusercontent.com/u/7783459/cyoa/demo1/game_over.mp4");
         };
 
         if (!adRolling && video.index > 0) { // advert should not play on first clip
@@ -49,7 +49,7 @@ flowplayer(function(api, root) {
             }).load({
                 sources: [
                     { type: "video/mp4",
-                        src:  "/videos/ads.mp4" }
+                        src:  "https://dl.dropboxusercontent.com/u/7783459/cyoa/ads.mp4" }
                 ]
             }).disable()
             // custom event progress.ad
@@ -66,7 +66,7 @@ flowplayer(function(api, root) {
                         sources: [
                             {
                                 type: "video/mp4",
-                                src: "/videos/demo1/game_over.mp4"
+                                src: "https://dl.dropboxusercontent.com/u/7783459/cyoa/demo1/game_over.mp4"
                             }
                         ]
                     }]);
@@ -83,7 +83,7 @@ flowplayer(function(api, root) {
                 sources: [
                     {
                         type: "video/mp4",
-                        src: "/videos/demo1/23.mp4"
+                        src: "https://dl.dropboxusercontent.com/u/7783459/cyoa/demo1/23.mp4"
                     }
                 ]
             }]);
