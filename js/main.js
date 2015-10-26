@@ -23,7 +23,7 @@ flowplayer(function(api, root) {
             var originalVideoIndex = video.index;
 
             $(root).addClass("ad-active");
-            $(root).attr("data-current", originalVideoIndex - 1);
+            $(root).attr("data-current", originalVideoIndex-1);
             // fullscreen button will be inactive while api is disabled
             $(".fp-fullscreen", root).hide();
             ev.preventDefault();
@@ -40,7 +40,7 @@ flowplayer(function(api, root) {
                     evt.preventDefault();
                     evt.stopPropagation();
 
-                    var index = parseInt($(evt.target).data("index"));
+                    var index = parseInt($(evt.target).data("to"));
                     console.info("User chose to play " + index);
 
                     api.video.index = index - 1;
@@ -51,7 +51,7 @@ flowplayer(function(api, root) {
                     { type: "video/mp4",
                         src:  "/videos/ads.mp4" }
                 ]
-            })/*.disable()*/
+            }).disable()
             // custom event progress.ad
             .on("progress.ad", function(e, api, currentTime) {
                 $(".fp-playlist p", root).text("Make your choice in: " +
@@ -78,9 +78,18 @@ flowplayer(function(api, root) {
         }
     }).on("finish", function(ev) {
         if(api.video.is_last) {
-            console.info("Last video finished");
-            //api.setPlaylist([]);
-            //TODO : play mission accomplished
+            console.info("Mission accomplished");
+            api.setPlaylist([{
+                sources: [
+                    {
+                        type: "video/mp4",
+                        src: "/videos/demo1/23.mp4"
+                    }
+                ]
+            }]);
+            $(".fp-playlist a", root).off("click");
+            api.video.index = 0;
+            finishAndPlayNext();
         }
     });
 });
